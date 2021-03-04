@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0",
+  "id": "8a2d4e0e-787f-4ece-b5ca-0192c944b217",
+  "packageName": "com.teams.sample.linkunfurling",
+  "developer": {
+    "name": "Link Unfurling",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.teams.com/privacy",
+    "termsOfUseUrl": "https://www.teams.com/termsofuser"
+  },
+  "icons": {
+    "color": "icon-color.png",
+    "outline": "icon-outline.png"
+  },
+  "name": {
+    "short": "Link Unfurling",
+    "full": "Link Unfurling Sample"
+  },
+  "description": {
+    "short": "Link Unfurling sample",
+    "full": "This sample demonstrates Link Unfurling for *.BotFramework.com urls."
+  },
+  "accentColor": "#FFFFFF",
+  "composeExtensions": [
+    {
+      "botId": "8a2d4e0e-787f-4ece-b5ca-0192c944b217",
+      "commands": [
+        {
+          "id": "searchQuery",
+          "context": [ "commandBox" ],
+          "description": "Test command to run query",
+          "title": "Search Command",
+          "type": "query",
+          "parameters": [
+            {
+              "name": "searchQuery",
+              "title": "Search Query",
+              "description": "Your search query",
+              "inputType": "text"
+            }
+          ]
+        }
+      ],
+      "messageHandlers": [
+        {
+          "type": "link",
+          "value": {
+            "domains": [
+              "*.botframework.com",
+              "*.wikipedia.org"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
